@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "backend": "bun --env-file=../../.env run index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "db":"*",
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
+  }
+}
