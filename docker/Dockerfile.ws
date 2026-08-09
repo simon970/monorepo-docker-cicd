@@ -17,8 +17,8 @@ RUN bun install
 COPY . .
 
 RUN bun install
-RUN bun run db:migrate
+RUN bun run db:generate
 
-EXPOSE 8080
+EXPOSE 8081
 
-CMD [ "bun","run","ws" ]
+CMD [ "bun","run","start:ws" ]

@@ -8,7 +8,7 @@ COPY ./bun.lock ./bun.lock
 
 COPY ./turbo.json ./turbo.json
 
-COPY ./package.josn ./package.json
+COPY ./package.json ./package.json
 
 COPY ./apps/backend ./apps/backend
 
@@ -17,8 +17,8 @@ RUN bun install
 COPY . .
 
 RUN bun install
-RUN bun run db:migrate
+RUN bun run db:generate
 
 EXPOSE 8080
 
-CMD [ "bun","run","backend" ]
+CMD [ "bun","run","start:backend" ]
