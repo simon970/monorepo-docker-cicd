@@ -37,6 +37,7 @@ jobs:
             file: ./docker/Dockerfile.be
             push: true
             tags: simonpaul496/todo-app-backend:${{github.sha}}
+            
          - name: Deploy to VM
            run: |
              echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key &
