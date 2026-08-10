@@ -1,4 +1,4 @@
-name: Deploy Backend to Stage
+name: Deploy websocket to Stage
 
 on: 
     push:
@@ -21,7 +21,8 @@ jobs:
            uses: docker/build-push-action@v6
            with:
             context: .
-            file: ./docker/Dockerfile.be
+            file: ./docker/Dockerfile.ws
             push: true
-            tags: simonpaul496/todo-app-backend:${{github.sha}}
+            tags: simonpaul496/todo-app-websocket:${{github.sha}}
+
         

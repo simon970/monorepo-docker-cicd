@@ -10,7 +10,7 @@ app.use(express.json());
 app.get("/users", async(req,res)=>{
     try {
         const users:User[] = await prismaClient.user.findMany();
-        res.json(users);
+        res.json({"users":users});
         
     } catch (error:any) {
         res.status(500).json({error: error.message})
