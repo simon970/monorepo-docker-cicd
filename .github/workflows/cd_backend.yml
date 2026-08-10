@@ -16,6 +16,11 @@ jobs:
            with:
               username: ${{secrets.DOCKERHUB_USERNAME}}
               password: ${{secrets.DOCKERHUB_TOKEN}}
+         - name: Apply database migrations
+           working-directory: packages/db
+           env:
+            DATABASE_URL: ${{ secrets.DATABASE_URL }}
+           run: bunx prisma migrate deploy
          
          - name: Build and Push
            uses: docker/build-push-action@v6
